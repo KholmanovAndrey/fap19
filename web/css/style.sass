@@ -1,0 +1,717 @@
+@import "vars"
+
+*
+  margin: 0
+  padding: 0
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+
+html
+  font-size: 14px
+
+html, body
+  height: 100%
+
+a
+  text-decoration: none
+  color: inherit
+  -webkit-transition: all .3s
+  -moz-transition: all .3s
+  -o-transition: all .3s
+  transition: all .3s
+  &:hover
+    text-decoration: none
+
+.paymentHide
+  display: none
+.help-block
+  background-color: darkred
+  color: #ffffff
+
+.wrapper
+  height: 100%
+  display: flex
+  flex-direction: column
+
+.wrap
+  flex-grow: 1
+
+.container
+  max-width: 1440px
+
+.breadcrumb
+  &__list
+    padding-right: .5rem
+
+.header
+  color: #ffffff
+  text-align: center
+  &__top
+    padding-top: 1rem
+    padding-bottom: 1rem
+    background-color: #000000
+  &__flex2
+    display: flex
+    justify-content: space-between
+    align-items: center
+  &__bottom
+    position: relative
+    background-color: $mainColor
+  &__item
+    position: relative
+    display: block
+    margin-bottom: .5rem
+  &__cart, &__account
+    padding: 1rem
+    display: none
+    color: #000000
+    position: absolute
+    top: 100%
+    right: 0
+    margin-top: .7rem
+    width: 100%
+    min-width: 280px
+    z-index: 1
+    background-color: #f3f3f3
+    border: 1px solid $borderColor
+    border-radius: 5px
+  &__cart:after
+    content: ""
+    width: 1rem
+    height: 1rem
+    background-color: #f3f3f3
+    border-top: 1px solid $borderColor
+    border-right: 1px solid $borderColor
+    transform: rotate(-45deg)
+    position: absolute
+    top: -.5rem
+    right: 50%
+    margin-right: 4rem
+  &__account:after
+    content: ""
+    width: 1rem
+    height: 1rem
+    background-color: #f3f3f3
+    border-top: 1px solid $borderColor
+    border-right: 1px solid $borderColor
+    transform: rotate(-45deg)
+    position: absolute
+    top: -.5rem
+    right: 50%
+    margin-right: -3rem
+  &__contact
+    margin-bottom: 1rem
+    & > .btn
+      width: 100%
+      margin-bottom: .5rem
+
+.cart
+  &__item
+    display: flex
+    justify-content: space-between
+    margin-bottom: 1rem
+    padding-bottom: 1rem
+    border-bottom: 1px solid $borderColor
+    & img
+      width: 100px
+      margin-right: 1rem
+    &:not(:last-of-type)
+      margin-bottom: 1rem
+
+.product-bio
+  display: flex
+  align-items: center
+
+.btn-reg
+  &__span
+    font-size: 0
+.btn-log
+  &__span
+    font-size: 0
+
+.logo
+  &__img
+    height: 100px
+
+.menu
+  position: absolute
+  top: 100%
+  left: 0
+  width: 100%
+  background-color: #000000
+  display: none
+  list-style-type: none
+  margin: 0
+  &__link
+    display: block
+    padding: .5rem 1rem
+    font-size: 1.3rem
+    font-weight: 700
+    text-transform: uppercase
+    -webkit-transition: all .3s
+    -moz-transition: all .3s
+    -o-transition: all .3s
+    transition: all .3s
+    &:hover
+      color: #ffffff
+      background-color: #000000
+
+.search-wrap
+  padding-top: 8rem
+  padding-bottom: 8rem
+  background: url("/web/img/search-bg.gif") center center no-repeat
+  background-size: cover
+
+.search
+  text-align: center
+  &__select, &__input
+    width: 100%
+    padding: .5rem 1rem
+    margin-bottom: 2rem
+
+.products
+  text-align: right
+  &__button
+    margin-right: 1rem
+
+.product
+  width: $widthSize
+  margin-bottom: 2rem
+  text-align: center
+  &__box
+    display: flex
+    flex-direction: column
+    overflow: hidden
+    height: 100%
+    background-color: #f3f3f3
+    border: 1px solid #666666
+    -webkit-border-radius: .5rem
+    -moz-border-radius: .5rem
+    border-radius: .5rem
+  &__image
+    position: relative
+    padding-top: $widthSize / 1.8
+    overflow: hidden
+  &__img
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    width: 100%
+  &__name,
+  &__manufacturer,
+  &__price
+    padding: .5rem 1rem
+  &__buttons
+    padding-bottom: 1rem
+  &__name
+    flex-grow: 1
+
+.product-view
+  &__desc
+    padding: 1rem
+    text-align: left
+    background-color: #666666
+    color: #ffffff
+  &__left
+    margin-bottom: 2rem
+  &__basket
+    margin-bottom: 1rem
+    padding: 1rem 0
+    background-color: #666666
+    color: #ffffff
+  &__row
+    display: flex
+    justify-content: space-between
+    align-items: center
+    &:nth-child(2n+1)
+      background-color: #666666
+      color: #ffffff
+  &__col
+    padding: .5rem 1rem
+  &__input
+    width: 50px
+    text-align: center
+
+.funfacts
+  background-size: cover
+  background: url("/web/img/funfact-bg.jpg") center center
+  color: #fff
+
+.funfact
+  background-color: rgba(0, 0, 0, 0.6)
+  padding: 2rem 3rem
+  text-align: center
+  &__icon
+    color: #ffd000
+    font-size: 3rem
+  &__content
+    font-size: 3rem
+    font-weight: 700
+  &__content h4
+    color: #eaeaea
+    font-size: 1rem
+    font-weight: 600
+    text-transform: uppercase
+
+.about-index
+  &__image img
+    width: 100%
+
+.article
+  margin-bottom: 2rem
+  &__thumb img
+    width: 100%
+  &__body
+    position: relative
+    padding-top: 4rem
+  &__date
+    position: absolute
+    top: -1.5rem
+    left: 50%
+    margin-left: -1.5rem
+    width: 3rem
+    height: 4rem
+    display: flex
+    flex-direction: column
+    justify-content: space-around
+    align-items: center
+    background-color: #feed01
+    font-weight: bold
+    -webkit-border-radius: .5rem
+    -moz-border-radius: .5rem
+    border-radius: .5rem
+
+.article-view
+  overflow: hidden
+  &__img
+    width: 100%
+    margin-bottom: 1rem
+
+.order
+  display: flex
+  justify-content: space-between
+  align-items: center
+  flex-wrap: wrap
+  padding: .2rem
+  border: 1px solid #999999
+  &:nth-child(2n+1)
+    background-color: #999999
+  &__col
+    padding: .2rem
+    &_header
+      font-weight: bold
+    &_1
+      width: 10%
+    &_2
+      width: 30%
+    &_3
+      width: 50%
+  &__span
+    display: none
+
+.cart-one
+  display: flex
+  justify-content: space-between
+  align-items: center
+  flex-wrap: wrap
+  padding: .2rem
+  border: 1px solid #999999
+  &:nth-child(2n+1)
+    background-color: #999999
+  &__col
+    padding: .2rem
+    &_header
+      font-weight: bold
+    &_1
+      width: 100%
+    &_2
+      width: 100%
+    &_3
+      width: 33.33%
+    &_4
+      width: 33.33%
+      text-align: center
+    &_right
+      text-align: right
+  &__img
+    width: 100%
+  &__span
+    display: none
+
+.details
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  background-color: rgba(0, 0, 0, 0.5)
+  z-index: 10000
+  display: flex
+  align-items: center
+  &__box
+    position: relative
+    padding: 1rem
+    background-color: #ffffff
+  &__overflow
+    max-height: 60vh
+    overflow: hidden
+    overflow-y: auto
+  &__close
+    position: absolute
+    top: 1rem
+    right: 1rem
+  &__contacts
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+  &__contact
+    margin-bottom: 1rem
+    width: 49%
+    padding: .5rem 1rem
+    &:nth-child(2n+1)
+      background-color: #f3f3f3
+
+.footer
+  min-height: 100px
+  &__top
+    color: #fff
+    background: #1e2228
+    padding-top: 2rem
+    padding-bottom: 2rem
+  &__bottom
+    padding-top: 1rem
+    padding-bottom: 0.5rem
+    text-align: center
+    color: #fff
+    background: #000
+
+.about
+  &__img
+    width: 100%
+
+.contact
+  text-align: center
+
+.pagination
+  width: 100%
+  display: flex
+  justify-content: center
+  & > li
+    margin-right: .3rem
+  & > li > a,
+  .disabled
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 40px
+    height: 40px
+    cursor: pointer
+    border: 1px solid #333333
+    -webkit-border-radius: .3rem
+    -moz-border-radius: .3rem
+    border-radius: .3rem
+    -webkit-transition: all .3s
+    -moz-transition: all .3s
+    -o-transition: all .3s
+    transition: all .3s
+    &:hover
+      background-color: #333333
+      color: #FFFFFF
+  & > li.active
+    background-color: #333333
+    color: #ffffff
+  & > li.next
+    margin-right: 0
+
+.visible
+  display: block
+.novisible
+  display: none
+.padding
+  padding-top: 4rem
+  padding-bottom: 4rem
+.title
+  padding: 20px 0
+  text-align: center
+  text-transform: uppercase
+  &__line
+    position: relative
+    &::after
+      background-color: #333
+      content: ""
+      height: 2px
+      left: -60px
+      position: absolute
+      top: 10px
+      width: 50px
+    &::before
+      background-color: #333
+      content: ""
+      height: 2px
+      position: absolute
+      right: -60px
+      top: 10px
+      width: 50px
+.overlay
+  position: relative
+  z-index: 1
+  &:after
+    background-color: rgba(0, 0, 0, 0.8)
+    content: ""
+    left: 0
+    position: absolute
+    top: 0
+    height: 100%
+    width: 100%
+    z-index: -1
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px)
+  .btn-reg
+    &__span
+      font-size: 1rem
+  .btn-log
+    &__span
+      font-size: 1rem
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px)
+  .details
+    &__contact
+      width: 24%
+      padding: .5rem 1rem
+
+  .search
+    text-align: center
+    display: flex
+    justify-content: center
+    align-items: center
+    &__select, &__input
+      width: 30%
+      padding: .5rem 1rem
+      margin-right: 1rem
+      margin-bottom: 0
+    &__button
+      min-width: 100px
+
+  .products
+    &__flex
+      display: flex
+      justify-content: flex-start
+      align-items: stretch
+      flex-wrap: wrap
+
+  .product
+    width: $widthSize / 2
+    padding-left: .5rem
+    padding-right: .5rem
+    -webkit-transition: all .3s
+    -moz-transition: all .3s
+    -o-transition: all .3s
+    transition: all .3s
+    &:hover
+      -webkit-transform: scale(1.07)
+      -moz-transform: scale(1.07)
+      -ms-transform: scale(1.07)
+      -o-transform: scale(1.07)
+      transform: scale(1.07)
+
+  .product-view
+    &__right
+      display: flex
+      justify-content: space-between
+    &__basket
+      width: 48%
+      order: 1
+    &__harac
+      width: 48%
+
+  .funfacts
+    &__flex
+      display: flex
+      justify-content: space-around
+
+  .funfact
+    &:not(:last-of-type)
+      margin-right: 1rem
+
+  .about-index
+    &__flex
+      display: flex
+      justify-content: space-between
+      align-items: center
+    &__text
+      width: 48%
+    &__image
+      width: 48%
+
+  .article
+    display: flex
+    justify-content: space-between
+    align-items: stretch
+    -webkit-transition: all .3s
+    -moz-transition: all .3s
+    -o-transition: all .3s
+    transition: all .3s
+    &:hover
+      -webkit-transform: scale(1.02)
+      -moz-transform: scale(1.02)
+      -ms-transform: scale(1.02)
+      -o-transform: scale(1.02)
+      transform: scale(1.02)
+    &:hover &__thumb
+      filter: grayscale(100%)
+    &__thumb
+      width: 50%
+      -webkit-transition: all .3s
+      -moz-transition: all .3s
+      -o-transition: all .3s
+      transition: all .3s
+    &__body
+      width: 50%
+      padding-left: 3rem
+      padding-right: 3rem
+      background-color: #f3f3f3
+    &__date
+      position: absolute
+      top: 50%
+      left: 0
+      margin-top: -1.5rem
+    &:nth-child(2n) &__body
+      order: -1
+    &:nth-child(2n) &__date
+      position: absolute
+      top: 50%
+      left: 100%
+      margin-top: -1.5rem
+
+  .article-view
+    &__img
+      float: left
+      margin: 0 1rem 1rem 0
+      width: 40%
+
+  .contact
+    &__flex
+      display: flex
+      justify-content: space-between
+    &__inform
+      width: 49%
+    &__form
+      width: 49%
+
+  .order
+    padding: .5rem
+    flex-wrap: nowrap
+    &__col
+      padding: .5rem
+      &_1
+        width: 10%
+      &_2
+        width: 25%
+      &_3
+        width: 15%
+      &_4
+        width: 25%
+        text-align: right
+    &__span
+      display: inline
+
+  .cart-one
+    padding: .5rem
+    flex-wrap: nowrap
+    &__col
+      padding: .5rem
+      &_1
+        width: 20%
+      &_2
+        width: 55%
+      &_3
+        width: 10%
+        text-align: center
+      &_4
+        width: 5%
+        text-align: right
+    &__span
+      display: inline
+
+  .cart-ones
+    &__h2
+      margin-top: 1rem
+      margin-bottom: .5rem
+      padding-bottom: .5rem
+      border-bottom: 1px solid $borderColor
+    &__btn
+      margin-top: 1rem
+
+  .footer
+    &__flex
+      display: flex
+      justify-content: space-between
+    &__about
+      width: 48%
+    &__contact
+      width: 48%
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px)
+  .header
+    &__flex1, &__flex2
+      display: flex
+      justify-content: space-between
+      align-items: center
+    &__nav
+      flex-grow: 1
+    &__item
+      margin-bottom: 0
+    &__cart
+      min-width: 320px
+    &__cart:after
+      right: 11rem
+      margin-right: 0
+    &__account:after
+      right: 2rem
+      margin-right: 0
+
+  .btn-menu
+    display: none
+  .menu
+    display: flex
+    justify-content: flex-end
+    align-items: center
+    position: relative
+    width: 100%
+    background-color: transparent
+    &__list
+      padding-left: 2rem
+    &__link
+      color: #000000
+
+  .product
+    width: $widthSize / 3
+
+  .product-view
+    display: flex
+    justify-content: space-between
+    &__left
+      width: 40%
+    &__right
+      padding-left: 2rem
+      width: 60%
+
+  .funfact
+    display: flex
+    justify-content: space-between
+    align-items: center
+    &__content
+      padding-left: 1rem
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px)
+  html
+    font-size: 18px
+
+  .product
+    width: $widthSize / 4

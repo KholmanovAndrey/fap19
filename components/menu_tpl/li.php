@@ -1,0 +1,1 @@
+<li class="menu__list"><a class="menu__link" href="<?= ($menu['url']=='/')?$menu['url']:yii\helpers\Url::to([$menu['url']]) ?>"><?= $menu['name']?><?php if( isset($menu['childs']) ): ?><span class="badge pull-right"><i class="fa fa-plus"></i></span><?php endif;?></a><?php if( isset($menu['childs']) ): ?><ul><?= $this->getMenuHtml($menu['childs'])?></ul><?php endif;?></li>

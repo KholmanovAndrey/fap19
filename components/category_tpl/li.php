@@ -1,0 +1,1 @@
+<li><a href="<?= $category['url']?>"><?= $category['name']?><?php if( isset($category['childs']) ): ?><span><i class="fa fa-plus"></i></span><?php endif;?></a><?php if( isset($category['childs']) ): ?><ul><?= $this->getCategoryHtml($category['childs'])?></ul><?php endif;?></li>

@@ -1,0 +1,51 @@
+<?php
+
+use yii\helpers\Html;
+
+?>
+<?php if (!empty($products)): ?>
+    <section class="products padding">
+        <div class="container">
+            <div class="title">
+                <h1 class="title__header">Запчасти</h1>
+                <span class="title__line"><i class="fa fa-car"></i></span>
+            </div>
+            <div class="products__flex">
+                <?php foreach ($products as $product): ?>
+                    <div class="product">
+                        <div class="product__box">
+                            <div class="product__image">
+                                <?php if ($product->image != Null):
+                                    $image = explode(',', $product->image) ?>
+                                    <?= Html::img($image[0], ['alt' => $product->alias, 'class' => 'product__img']); ?>
+                                <?php else: ?>
+                                    <?= Html::img('@web/img/product/no-image.png', ['alt' => $product->alias, 'class' => 'product__img']); ?>
+                                <?php endif ?>
+                            </div>
+                            <h2 class="product__name"><?= $product->name ?></h2>
+                            <p class="product__manufacturer"><i class="fas fa-car"></i>
+                                <a href="<?= \yii\helpers\Url::to(['category/view', 'id' => $product->category[0]->id]) ?>" class="product__link"><?= $product->category[0]->name ?></a>
+                                / <a href="<?= \yii\helpers\Url::to(['category/view', 'id' => $product->category[1]->id]) ?>" class="product__link"><?= $product->category[1]->name ?></a></p>
+                            <p class="product__price"><i class="fas fa-tag"></i> <?= $product->price ?> <i class="fas fa-ruble-sign"></i>
+                            </p>
+                            <div class="product__buttons">
+                                <a href="<?= \yii\helpers\Url::to(['product/view', 'id' => $product->id]) ?>" class="btn btn-warning">Подробнее <i class="fas fa-long-arrow-alt-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach ?>
+            </div>
+            <?php echo \yii\widgets\LinkPager::widget(['pagination' => $pages]) ?>
+        </div>
+    </section>
+    <?php else: ?>
+    <div class="products padding">
+        <div class="container">
+            <div class="title">
+                <h1 class="title__header">Запчасти</h1>
+                <span class="title__line"><i class="fa fa-car"></i></span>
+            </div>
+            <h3>Запчастей нет</h3>
+        </div>
+    </div>
+<?php endif ?>
