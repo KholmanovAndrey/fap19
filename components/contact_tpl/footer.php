@@ -18,6 +18,6 @@
         <?php endif ?>
     <?php endforeach ?>
 </p>
-<a href="https://go.2gis.com/i0smd" class="btn btn-warning" target="_blank">Показать
+<a href="/contact" class="btn btn-warning">Показать
     расположение на
     карте</a>
