@@ -18,6 +18,4 @@
         <?php endif ?>
     <?php endforeach ?>
 </p>
-<a href="/contact" class="btn btn-warning">Показать
-    расположение на
-    карте</a>
+<a href="/contact" class="btn btn-warning">Показать расположение на карте</a>
