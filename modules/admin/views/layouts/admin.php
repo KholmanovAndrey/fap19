@@ -70,6 +70,11 @@ AppAsset::register($this);
                                                               href="<?= \yii\helpers\Url::to(['import/index']) ?>">Импорт</a>
                                     </li>
                                 <?php endif ?>
+                                <?php if (Yii::$app->user->can('admin')) : ?>
+                                    <li class="menu__list"><a class="menu__link"
+                                                              href="<?= \yii\helpers\Url::to(['contact/index']) ?>">Контакты</a>
+                                    </li>
+                                <?php endif ?>
                             </ul>
                         </nav>
                     </div>

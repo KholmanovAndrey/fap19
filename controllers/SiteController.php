@@ -195,10 +195,14 @@ class SiteController extends AppController
         }
 
         $contact = Contact::findOne(1);
+        $phones = json_decode($contact->phone);
+        $emails = json_decode($contact->email);
 
         return $this->render('contact', [
             'model' => $model,
             'contact' => $contact,
+            'phones' => $phones,
+            'emails' => $emails
         ]);
     }
 

@@ -38,6 +38,9 @@ AppAsset::register($this);
         <header class="header">
             <div class="header__top">
                 <div class="container header__flex1">
+                    <div class="header__item">
+                        <p>Контактные двигатели, АКПП, <br/>автозапчасти из Японии. <br/><b>Доставка по России и СНГ</b></p>
+                    </div>
                     <?= \app\components\ContactWidget::widget() ?>
                     <div class="header__item">
                         <button class="btn btn-warning btn-cart" type="button"><i

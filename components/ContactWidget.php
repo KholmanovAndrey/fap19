@@ -21,6 +21,9 @@ class ContactWidget extends Widget {
     public function run(){
         $contact = Contact::findOne(1);
 
+        $phones = json_decode($contact->phone);
+        $emails = json_decode($contact->email);
+
         ob_start();
         include __DIR__ . '/contact_tpl/' . $this->tpl;
         return ob_get_clean();
