@@ -26,6 +26,11 @@ $this->params['breadcrumbs'][] = $this->title;
                     foreach ($phones as $phone) :?>
                         <a href="tel:<?= $phone->tel ?>" class="header__item mr-2">
                             <i class="fas fa-mobile-alt"></i>
+                            <?php if ($phone->socials) : $socials = explode(',', $phone->socials)?>
+                                <?php foreach ($socials as $social) :?>
+                                    <i class="<?= $social ?>"></i>
+                                <?php endforeach ?>
+                            <?php endif ?>
                             <?= $phone->tel ?><?= ($phone->contact) ? ' - ' . $phone->contact : '' ?>
                         </a>
                     <?php endforeach ?>
