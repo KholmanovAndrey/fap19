@@ -44,6 +44,29 @@ $this->params['breadcrumbs'][] = $this->title;
                         </a>
                     <?php endforeach ?>
                 </p>
+                <h5 class="mt-5">Реквизиты организации</h5>
+                <table class="text-left">
+                    <tr>
+                        <td class="pr-2">Наименование:</td>
+                        <td>ИП Филисова Наталья Владимировна</td>
+                    </tr>
+                    <tr>
+                        <td class="pr-2">ОГРН/ИНН:</td>
+                        <td>304190104300096/19010043914</td>
+                    </tr>
+                    <tr>
+                        <td class="pr-2">Почтовый адрес:</td>
+                        <td>655011, Республика Хакасия, г. Абакан, ул. Восточная 18-1</td>
+                    </tr>
+                    <tr>
+                        <td class="pr-2">Физический адрес:</td>
+                        <td>655011, Республика Хакасия, г. Абакан, ул. Восточная 18-1</td>
+                    </tr>
+                    <tr>
+                        <td class="pr-2">Юридический адрес:</td>
+                        <td>655011, Республика Хакасия, г. Абакан, ул. Восточная 18-1</td>
+                    </tr>
+                </table>
             </div>
             <div class="contact__form">
                 <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A0cdd4e0b83873b9f71f7cc281455c86adc2829cb53aa143e085a01143a023c3c&amp;width=100%25&amp;height=500&amp;lang=ru_RU&amp;scroll=true"></script>
