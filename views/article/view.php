@@ -17,8 +17,8 @@ use yii\helpers\Html;
                         <?= Html::img('/web/img/article/' . $article->image,
                         ['alt' => $article->alias, 'class' => 'article-view__img']); ?>
                     <?php endif ?>
-                    <div class="article-view__date">Дата создания статьи :: 25 <span class="month">января</span> 2018
-                    </div>
+<!--                    <div class="article-view__date">Дата создания статьи :: 25 <span class="month">января</span> 2018-->
+<!--                    </div>-->
                     <?= $article->text ?>
                 </div>
             </div>
