@@ -203,6 +203,9 @@ AppAsset::register($this);
                         <span class="title__line"><i class="fa fa-car"></i></span>
                     </div>
                     <?= \app\components\ContactWidget::widget(['tpl' => 'footer']) ?>
+                    <div class="cards mt-5">
+                        <?= Html::img('web/img/cards.png', ['alt' => 'Способы оплаты безналичного расчета']) ?>
+                    </div>
                 </div>
             </div>
         </div>

@@ -42,8 +42,8 @@ use yii\widgets\ActiveForm;
                                 $return = '<label class="modal-radio">';
                                 $return .= '<input type="radio" name="' . $name . '" value="' . $value . '" tabindex="3">';
                                 $return .= '<i></i>';
-                                $return .= '<span>' . ucwords($label[0]) . '</span><br/>';
-                                $return .= '<span>' . ucwords($label[1]) . '</span>';
+                                $return .= ' <b>' . ucwords($label[0]) . '</b><br/>';
+                                $return .= ' <span>' . ucwords($label[1]) . '</span>';
                                 $return .= '</label><br/>';
 
                                 return $return;
@@ -75,8 +75,8 @@ use yii\widgets\ActiveForm;
                                 }
                                 $return .= '>';
                                 $return .= '<i></i>';
-                                $return .= '<span>' . ucwords($label[0]) . '</span><br/>';
-                                $return .= '<span>' . ucwords($label[1]) . '</span>';
+                                $return .= ' <b>' . ucwords($label[0]) . '</b><br/>';
+                                $return .= ' <span>' . ucwords($label[1]) . '</span>';
                                 $return .= '</label><br/>';
 
                                 return $return;
