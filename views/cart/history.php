@@ -10,6 +10,7 @@
                 <div class="order__col order__col_header order__col_2">Дата создания</div>
                 <div class="order__col order__col_header order__col_2">Дата изменения</div>
                 <div class="order__col order__col_header order__col_3">Статус</div>
+                <div class="order__col order__col_header order__col_3">Оплата</div>
                 <div class="order__col order__col_header order__col_4"></div>
             </div>
             <?php foreach ($orders as $order) : ?>
@@ -30,6 +31,17 @@
                             echo '<span class="btn btn-success">Выполнен</span>';
                         } elseif ((int)$order->status === 3) {
                             echo '<span class="btn btn-danger">Отменен</span>';
+                        }
+                        ?></div>
+                    <div class="order__col order__col_3"><?php
+                        if ((int)$order->isPaid === 0) {
+                            if ((int)$order->payment->id === 1) {
+                                echo '<span>Оплата при получении</span>';
+                            } elseif ((int)$order->payment->id === 2) {
+                                echo '<a href="/cart/payment/?id=' . $order->id . '" class="btn btn-danger"><i class="fas fa-money-bill-wave mr-1"></i>Оплатить</a>';
+                            }
+                        } elseif ((int)$order->status === 1) {
+                            echo '<span class="btn btn-success">Оплачено</span>';
                         }
                         ?></div>
                     <div class="order__col order__col_4">
