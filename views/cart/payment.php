@@ -12,10 +12,13 @@
             $order_sum = $order->sum;
             $optional_phone = $order->phone;
 
+
             $payment_parameters = http_build_query(array( "clientid"=>$client_login,
                 "orderid"=>$orderid,
                 "sum"=>$order_sum,
-                "client_phone"=>$optional_phone));
+                "client_phone"=>$optional_phone,
+                "client_email" => $order->email,
+                "service_name" => "Покупка запчастей для авто"));
             $options = array("http"=>array(
                 "method"=>"POST",
                 "header"=>

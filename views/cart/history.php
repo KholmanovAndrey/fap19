@@ -40,7 +40,7 @@
                             } elseif ((int)$order->payment->id === 2) {
                                 echo '<a href="/cart/payment/?id=' . $order->id . '" class="btn btn-danger"><i class="fas fa-money-bill-wave mr-1"></i>Оплатить</a>';
                             }
-                        } elseif ((int)$order->status === 1) {
+                        } elseif ((int)$order->isPaid === 1) {
                             echo '<span class="btn btn-success">Оплачено</span>';
                         }
                         ?></div>

@@ -29,10 +29,10 @@ class CartController extends AppController {
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['order', 'history', 'accept'],
+                'only' => ['order', 'history', 'accept', 'ispaid', 'payment'],
                 'rules' => [
                     [
-                        'actions' => ['order'],
+                        'actions' => ['order', 'ispaid', 'payment'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -248,6 +248,12 @@ class CartController extends AppController {
         $order = Order::find()->with(['delivery', 'payment'])->where(['id' => (int)$id])->One();
 
         return $this->render('payment', compact('order'));
+    }
+
+    public function actionIspaid($id) {
+        $order = Order::findOne($id);
+        $order->isPaid = 1;
+        $order->save();
     }
 
     protected function saveOrderItems($items, $order_id){

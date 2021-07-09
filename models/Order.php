@@ -15,6 +15,7 @@ use Yii;
  * @property string $qty Общее количество заказанных товарных позиций
  * @property double $sum Итого = количство + цена
  * @property string $status
+ * @property int $isPaid
  * @property string $name ФИО
  * @property string $email
  * @property string $phone
@@ -69,7 +70,8 @@ class Order extends \yii\db\ActiveRecord
             'payment_id' => 'Оплата',
             'qty' => 'Qty',
             'sum' => 'Sum',
-            'status' => 'Status',
+            'status' => 'Статус',
+            'isPaid' => 'Оплата',
             'name' => 'ФИО',
             'email' => 'Email',
             'phone' => 'Телефон',
