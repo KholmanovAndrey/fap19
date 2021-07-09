@@ -2,7 +2,7 @@
 <section class="cart-ones padding">
     <div class="container">
         <div class="title">
-            <h1 class="title__header">Оформление заказов</h1>
+            <h1 class="title__header">Оплата заказа</h1>
             <span class="title__line"><i class="fa fa-car"></i></span>
         </div>
         <div class="payment">
