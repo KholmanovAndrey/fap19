@@ -224,6 +224,10 @@ class CartController extends AppController {
                 $session->remove('cart.qty');
                 $session->remove('cart.sum');
 
+                if ($order->payment_id === '2') {
+                    return $this->redirect(['cart/payment', 'id' => $order->id]);
+                }
+
                 return $this->refresh();
             } else {
                 var_dump($order->getErrors());
@@ -238,6 +242,12 @@ class CartController extends AppController {
         $this->setMeta('Оформление заказа');
 
         return $this->render('order', compact('session', 'order', 'user', 'delivery', 'payments'));
+    }
+
+    public function actionPayment($id) {
+        $order = Order::find()->with(['delivery', 'payment'])->where(['id' => (int)$id])->One();
+
+        return $this->render('payment', compact('order'));
     }
 
     protected function saveOrderItems($items, $order_id){
