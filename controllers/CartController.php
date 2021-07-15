@@ -273,6 +273,8 @@ class CartController extends AppController {
         $order = Order::findOne(20);
         $order->isPaid = 1;
         $order->save();
+
+        echo "OK ".md5($id.$secret_seed);
     }
 
     protected function saveOrderItems($items, $order_id){
