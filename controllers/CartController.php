@@ -252,7 +252,7 @@ class CartController extends AppController {
     }
 
     public function actionIspaid() {
-        $secret_seed = "verysecretseed";
+        $secret_seed = "A6[m(APkwXfNYEuR.cB";
         $id = $_POST['id'];
         $sum = $_POST['sum'];
         $clientid = $_POST['clientid'];
