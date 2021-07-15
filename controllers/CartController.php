@@ -274,7 +274,7 @@ class CartController extends AppController {
         $order->isPaid = 1;
         $order->save();
 
-        return $this->render('ispaid', compact('order'));
+        return $this->render('ispaid', compact('order', 'secret_seed'));
     }
 
     protected function saveOrderItems($items, $order_id){

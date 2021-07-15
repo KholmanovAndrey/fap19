@@ -1,2 +1,2 @@
 <?php
-echo "OK ".md5($id.$secret_seed);
+echo "OK ".md5($order->id.$secret_seed);
