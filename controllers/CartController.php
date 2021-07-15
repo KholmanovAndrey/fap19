@@ -259,11 +259,11 @@ class CartController extends AppController {
         $orderid = $_POST['orderid'];
         $key = $_POST['key'];
 
-        if ($key != md5 ($id.number_format($sum, 2, ".", "")
-          .$clientid.$orderid.$secret_seed)) {
-//            echo "Error! Hash mismatch";
-            exit;
-        }
+//        if ($key != md5 ($id.number_format($sum, 2, ".", "")
+//          .$clientid.$orderid.$secret_seed)) {
+////            echo "Error! Hash mismatch";
+//            exit;
+//        }
 
         $order = Order::findOne($orderid);
         if ($order && (int)$order->shopper_id === (int)$clientid) {
