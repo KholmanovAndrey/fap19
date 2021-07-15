@@ -14,6 +14,7 @@ use app\models\Product;
 use app\models\Cart;
 use app\models\Order;
 use app\models\OrderItems;
+use app\models\User;
 use Yii;
 use yii\data\Pagination;
 use yii\filters\AccessControl;
@@ -250,10 +251,25 @@ class CartController extends AppController {
         return $this->render('payment', compact('order'));
     }
 
-    public function actionIspaid($id) {
-        $order = Order::findOne($id);
-        $order->isPaid = 1;
-        $order->save();
+    public function actionIspaid() {
+        $secret_seed = "verysecretseed";
+        $id = $_POST['id'];
+        $sum = $_POST['sum'];
+        $clientid = $_POST['clientid'];
+        $orderid = $_POST['orderid'];
+        $key = $_POST['key'];
+
+        if ($key != md5 ($id.number_format($sum, 2, ".", "")
+          .$clientid.$orderid.$secret_seed)) {
+//            echo "Error! Hash mismatch";
+            exit;
+        }
+
+        $order = Order::findOne($orderid);
+        if ($order && (int)$order->shopper_id === (int)$clientid) {
+            $order->isPaid = 1;
+            $order->save();
+        }
     }
 
     protected function saveOrderItems($items, $order_id){
