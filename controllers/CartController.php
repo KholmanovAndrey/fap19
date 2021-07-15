@@ -270,7 +270,7 @@ class CartController extends AppController {
 //            $order->isPaid = 1;
 //            $order->save();
 //        }
-        $order = Order::findOne($orderid);
+        $order = Order::findOne(20);
         $order->isPaid = 1;
         $order->save();
     }
