@@ -270,7 +270,7 @@ class CartController extends AppController {
             $order->isPaid = 1;
             $order->save();
             echo "OK ".md5($id.$secret_seed);
-//            exit;
+            exit;
 //        }
 
 //        echo "Error! Not save order";
