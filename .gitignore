@@ -34,3 +34,4 @@ tests/_support/_generated
 
 # ignore files
 /config/db.php
+/web/ispaid.php
