@@ -265,12 +265,12 @@ class CartController extends AppController {
 //            exit;
 //        }
 
-//        $order = Order::findOne($orderid);
+        $order = Order::findOne($orderid);
 //        if ($order && (int)$order->shopper_id === (int)$clientid) {
-//            $order->isPaid = 1;
-//            $order->save();
+            $order->isPaid = 1;
+            $order->save();
             echo "OK ".md5($id.$secret_seed);
-            exit;
+//            exit;
 //        }
 
 //        echo "Error! Not save order";
