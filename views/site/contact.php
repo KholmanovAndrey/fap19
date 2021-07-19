@@ -60,7 +60,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     </tr>
                     <tr>
                         <td class="pr-2">Физический адрес:</td>
-                        <td>655011, Республика Хакасия, г. Абакан, ул. Восточная 18-1</td>
+                        <td><?= $contact->adress ?></td>
                     </tr>
                     <tr>
                         <td class="pr-2">Юридический адрес:</td>
