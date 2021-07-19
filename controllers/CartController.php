@@ -256,7 +256,7 @@ class CartController extends AppController {
         $id = $_POST['id'];
         $sum = $_POST['sum'];
         $clientid = $_POST['clientid'];
-        $orderid = $_POST['orderid'];
+        $orderid = (int)$_POST['orderid'];
         $key = $_POST['key'];
 
 //        if ($key != md5 ($id.number_format($sum, 2, ".", "")
