@@ -61,6 +61,12 @@ $config = [
                     'class' => 'yii\log\FileTarget',
                     'levels' => ['error', 'warning'],
                 ],
+                [
+                    'class' => 'yii\log\FileTarget', //в файл
+                    'categories' => ['payment_is_paid'], //категория логов
+                    'logFile' => '@runtime/logs/ispaid.log', //куда сохранять
+                    'logVars' => [] //не добавлять в лог глобальные переменные ($_SERVER, $_SESSION...)
+                ],
             ],
         ],
         'db' => $db,
