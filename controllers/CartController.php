@@ -277,19 +277,12 @@ class CartController extends AppController {
             $order->isPaid = 1;
             $order->save();
             echo "OK ".md5($id.$secret_seed);
-            $messageLog = [
-                'status' => 'POST-запрос обработан.',
-                'post' => $post
-            ];
+            $messageLog = ['status' => 'POST-запрос обработан.'];
             Yii::info($messageLog, 'payment_is_paid'); //запись в лог
             exit;
         }
 
-        echo "Error! Not save order";
-        $messageLog = [
-            'status' => 'POST-запрос не обработан.',
-            'post' => $post
-        ];
+        $messageLog = ['status' => 'POST-запрос не обработан.'];
         Yii::info($messageLog, 'payment_is_paid'); //запись в лог
         exit;
     }
