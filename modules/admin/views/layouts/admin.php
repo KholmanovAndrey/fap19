@@ -53,9 +53,8 @@ AppAsset::register($this);
                                 </li>
                                 <li class="menu__list"><a class="menu__link"
                                                           href="<?= \yii\helpers\Url::to(['category/index']) ?>">Категории</a>
-                                </li>
-                                <li class="menu__list"><a class="menu__link"
-                                                          href="<?= \yii\helpers\Url::to(['product/index']) ?>">Запчасти</a>
+                                    <a class="menu__link"
+                                       href="<?= \yii\helpers\Url::to(['product/index']) ?>">Запчасти</a>
                                 </li>
                                 <li class="menu__list"><a class="menu__link"
                                                           href="<?= \yii\helpers\Url::to(['article/index']) ?>">Статьи</a>
@@ -63,16 +62,12 @@ AppAsset::register($this);
                                 <?php if (Yii::$app->user->can('admin')) : ?>
                                     <li class="menu__list"><a class="menu__link"
                                                               href="<?= \yii\helpers\Url::to(['user/index']) ?>">Пользователи</a>
-                                    </li>
-                                <?php endif ?>
-                                <?php if (Yii::$app->user->can('admin')) : ?>
-                                    <li class="menu__list"><a class="menu__link"
-                                                              href="<?= \yii\helpers\Url::to(['import/index']) ?>">Импорт</a>
-                                    </li>
-                                <?php endif ?>
-                                <?php if (Yii::$app->user->can('admin')) : ?>
-                                    <li class="menu__list"><a class="menu__link"
-                                                              href="<?= \yii\helpers\Url::to(['contact/index']) ?>">Контакты</a>
+                                        <a class="menu__link"
+                                           href="<?= \yii\helpers\Url::to(['import/index']) ?>">Импорт</a>
+                                        <a class="menu__link"
+                                           href="<?= \yii\helpers\Url::to(['transport-company/index']) ?>">Транспортные компании</a>
+                                        <a class="menu__link"
+                                           href="<?= \yii\helpers\Url::to(['contact/index']) ?>">Контакты</a>
                                     </li>
                                 <?php endif ?>
                             </ul>

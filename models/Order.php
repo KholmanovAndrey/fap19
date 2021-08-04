@@ -105,4 +105,12 @@ class Order extends \yii\db\ActiveRecord
     {
         return $this->hasMany(OrderItems::className(), ['order_id' => 'id']);
     }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getTransportCompany()
+    {
+        return $this->hasOne(TransportCompany::className(), ['id' => 'transport_id']);
+    }
 }

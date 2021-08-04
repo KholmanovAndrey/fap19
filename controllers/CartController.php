@@ -266,18 +266,20 @@ class CartController extends AppController {
         $orderid = (int)$_POST['orderid'];
         $key = $_POST['key'];
 
-//        if ($key != md5 ($id.number_format($sum, 2, ".", "")
-//          .$clientid.$orderid.$secret_seed)) {
-//            echo "Error! Hash mismatch";
-//            exit;
-//        }
+        if ($key != md5 ($id.number_format($sum, 2, ".", "")
+          .$clientid.$orderid.$secret_seed)) {
+            echo "No " . md5($id.$secret_seed);;
+            $messageLog = ['status' => 'POST-запрос не обработан. Not hast'];
+            Yii::info($messageLog, 'payment_is_paid'); //запись в лог
+            exit;
+        }
 
         $order = Order::findOne($orderid);
         if ($order) {
             $order->isPaid = 1;
             $order->save();
-            echo "OK ".md5($id.$secret_seed);
-            $messageLog = ['status' => 'POST-запрос обработан.'];
+            echo "OK " . md5($id.$secret_seed);
+            $messageLog = ['status' => 'POST-запрос обработан. OK hash'];
             Yii::info($messageLog, 'payment_is_paid'); //запись в лог
             exit;
         }
