@@ -14,6 +14,7 @@ use app\models\Product;
 use app\models\Cart;
 use app\models\Order;
 use app\models\OrderItems;
+use app\models\TransportCompany;
 use app\models\User;
 use Yii;
 use yii\data\Pagination;
@@ -201,6 +202,9 @@ class CartController extends AppController {
             $order->sum = $session['cart.sum'];
             $order->status = '0';
             $order->seller_id = 0;
+            if ((int)$order->delivery_id === 1) {
+                $order->transport_id = NULL;
+            }
             if ($order->save()) {
                 $this->saveOrderItems($session['cart'], $order->id);
 
@@ -238,11 +242,12 @@ class CartController extends AppController {
 
         $delivery = Delivery::find()->all();
         $payments = Payments::find()->all();
+        $transportCompanies = TransportCompany::find()->all();
 
         // устанавлеваем данные мета-тегов
         $this->setMeta('Оформление заказа');
 
-        return $this->render('order', compact('session', 'order', 'user', 'delivery', 'payments'));
+        return $this->render('order', compact('session', 'order', 'user', 'delivery', 'payments', 'transportCompanies'));
     }
 
     public function actionPayment($id) {

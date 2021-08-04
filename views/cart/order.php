@@ -53,6 +53,34 @@ use yii\widgets\ActiveForm;
                     ->label(false);
                 ?>
             </div>
+
+            <div id="transport">
+                <h2 class="cart-ones__h2">Транспортные компании</h2>
+                <?
+                foreach ($transportCompanies as $company) {
+                    $company_arr[$company->id] = [0 => $company->name, 1 => $company->title];
+                }
+                ?>
+                <?=
+                $form->field($order, 'transport_id')
+                    ->radioList(
+                        $company_arr,
+                        [
+                            'item' => function($index, $label, $name, $checked, $value) {
+
+                                $return = '<label class="modal-radio mr-5">';
+                                $return .= '<input type="radio" name="' . $name . '" value="' . $value . '" tabindex="3">';
+                                $return .= '<i></i>';
+                                $return .= ' <b>' . ucwords($label[1]) . '</b>';
+                                $return .= '</label>';
+
+                                return $return;
+                            }
+                        ]
+                    )
+                    ->label(false);
+                ?>
+            </div>
 <!---->
 <!--            <div id="transport">-->
 <!--                <h2 class="cart-ones__h2">Транспортная компания "СДЕК"</h2>-->

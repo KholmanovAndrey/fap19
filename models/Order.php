@@ -7,12 +7,13 @@ use Yii;
 /**
  * This is the model class for table "order".
  *
- * @property string $id
- * @property string $seller_id
- * @property string $shopper_id
- * @property string $delivery_id
- * @property string $payment_id
- * @property string $qty Общее количество заказанных товарных позиций
+ * @property integer $id
+ * @property integer $seller_id
+ * @property integer $shopper_id
+ * @property integer $delivery_id
+ * @property integer $payment_id
+ * @property integer $transport_id
+ * @property integer $qty Общее количество заказанных товарных позиций
  * @property double $sum Итого = количство + цена
  * @property string $status
  * @property int $isPaid
@@ -45,7 +46,7 @@ class Order extends \yii\db\ActiveRecord
     {
         return [
             [['seller_id', 'shopper_id', 'delivery_id', 'payment_id'], 'required'],
-            [['seller_id', 'shopper_id', 'delivery_id', 'payment_id', 'qty'], 'integer'],
+            [['seller_id', 'shopper_id', 'delivery_id', 'payment_id', 'transport_id', 'qty'], 'integer'],
             [['sum'], 'number'],
             [['status', 'comment'], 'string'],
             [['created_at', 'updated_at'], 'safe'],
@@ -68,6 +69,7 @@ class Order extends \yii\db\ActiveRecord
             'shopper_id' => 'Shopper ID',
             'delivery_id' => 'Доставка',
             'payment_id' => 'Оплата',
+            'transport_id' => 'Транспортная компания',
             'qty' => 'Qty',
             'sum' => 'Sum',
             'status' => 'Статус',

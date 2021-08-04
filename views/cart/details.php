@@ -17,7 +17,11 @@
                     <div class="details__contact">Адрес:</div>
                     <div class="details__contact"><?= $order->address ?></div>
                     <div class="details__contact">Доставка:</div>
-                    <div class="details__contact"><?= $order->delivery->name ?></div>
+                    <div class="details__contact"><?= $order->delivery->name ?>
+                        <?php if ($order->transportCompany) :?>
+                        "<?= $order->transportCompany->title ?>"
+                        <?php endif?>
+                    </div>
                     <div class="details__contact">Оплата:</div>
                     <div class="details__contact"><?= $order->payment->name ?></div>
                 </div>
