@@ -14,22 +14,26 @@ use yii\helpers\Html;
                 <div class="product-view__left">
                     <div class="product-view__slider">
                         <?php if ($product->image != Null) : $images = explode(',', $product->image); ?>
-                            <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
+                            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                                <ol class="carousel-indicators">
+                                    <?php foreach ($images as $key => $image): ?>
+                                        <li data-target="#carouselExampleIndicators" data-slide-to="<?=$key?>"
+                                            <?=($key === 0)? 'class="active"' : ''?>></li>
+                                    <?php endforeach ?>
+                                </ol>
                                 <div class="carousel-inner">
                                     <?php foreach ($images as $key => $image): ?>
-                                        <div class="carousel-item active" data-interval="2000">
+                                        <div class="carousel-item<?=($key === 0)? ' active"' : ''?>" data-interval="2000">
                                             <?= Html::img($image, ['class' => 'd-block w-100',
                                                 'alt' => $product->alias . ' ' . $key]); ?>
                                         </div>
                                     <?php endforeach ?>
                                 </div>
-                                <a class="carousel-control-prev" href="#carouselExampleInterval" role="button"
-                                   data-slide="prev">
+                                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                     <span class="sr-only">Previous</span>
                                 </a>
-                                <a class="carousel-control-next" href="#carouselExampleInterval" role="button"
-                                   data-slide="next">
+                                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
                                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                     <span class="sr-only">Next</span>
                                 </a>
