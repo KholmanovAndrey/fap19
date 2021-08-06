@@ -108,7 +108,7 @@ $this->title = 'Магазин автозапчастей в Абакане - Fe
                             <h3>
                                 <a href="<?= \yii\helpers\Url::to(['article/view', 'id' => $article->id]) ?>"><?= $article->
                                     name ?></a></h3>
-                            <div class="article__date">25 <span class="month">янв</span></div>
+<!--                            <div class="article__date">25 <span class="month">янв</span></div>-->
                             <p><?= $article->description ?></p>
                             <a class="btn btn-warning"
                                href="<?= \yii\helpers\Url::to(['article/view', 'id' => $article->id]) ?>" class="btn2">Читать
