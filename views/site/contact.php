@@ -52,7 +52,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     </tr>
                     <tr>
                         <td class="pr-2">ОГРН/ИНН:</td>
-                        <td>304190104300096/19010043914</td>
+                        <td>304190104300096/190100439514</td>
                     </tr>
                     <tr>
                         <td class="pr-2">Почтовый адрес:</td>
