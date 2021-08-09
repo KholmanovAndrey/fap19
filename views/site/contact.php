@@ -48,15 +48,15 @@ $this->params['breadcrumbs'][] = $this->title;
                 <table class="text-left">
                     <tr>
                         <td class="pr-2">Наименование:</td>
-                        <td>ИП Филисова Наталья Владимировна</td>
+                        <td><?= $contact->company ?></td>
                     </tr>
                     <tr>
                         <td class="pr-2">ОГРН/ИНН:</td>
-                        <td>304190104300096/190100439514</td>
+                        <td><?= $contact->ogrn ?>/<?= $contact->inn ?></td>
                     </tr>
                     <tr>
                         <td class="pr-2">Почтовый адрес:</td>
-                        <td>655011, Республика Хакасия, г. Абакан, ул. Восточная 18-1</td>
+                        <td><?= $contact->postal ?>, <?= $contact->legal_address ?></td>
                     </tr>
                     <tr>
                         <td class="pr-2">Физический адрес:</td>
@@ -64,7 +64,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     </tr>
                     <tr>
                         <td class="pr-2">Юридический адрес:</td>
-                        <td>655011, Республика Хакасия, г. Абакан, ул. Восточная 18-1</td>
+                        <td><?= $contact->postal ?>, <?= $contact->legal_address ?></td>
                     </tr>
                 </table>
             </div>

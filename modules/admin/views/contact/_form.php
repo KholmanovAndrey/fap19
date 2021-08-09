@@ -23,9 +23,14 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'email')->textarea(['rows' => 6]) ?>
 
     <?= $form->field($model, 'publication')->textInput() ?>
+    <?= $form->field($model, 'company')->textInput() ?>
+    <?= $form->field($model, 'ogrn')->textInput() ?>
+    <?= $form->field($model, 'inn')->textInput() ?>
+    <?= $form->field($model, 'postal')->textInput() ?>
+    <?= $form->field($model, 'legal_address')->textInput() ?>
 
     <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton('Сохранить', ['class' => 'btn btn-success']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

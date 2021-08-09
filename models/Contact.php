@@ -21,7 +21,7 @@ class Contact extends ActiveRecord {
         return [
             [['publication'], 'integer'],
             [['office', 'adress', 'work'], 'string', 'max' => 255],
-            [['phone', 'email'], 'string'],
+            [['phone', 'email', 'company', 'ogrn', 'inn', 'postal', 'legal_address'], 'string'],
         ];
     }
 
@@ -34,6 +34,11 @@ class Contact extends ActiveRecord {
             'phone' => 'Телефон',
             'email' => 'E-mail',
             'publication' => 'Публикация',
+            'company' => 'Компания',
+            'ogrn' => 'ОГРН',
+            'inn' => 'ИНН',
+            'postal' => 'Почтовый индекс',
+            'legal_address' => 'Юридический адрес',
         ];
     }
 
